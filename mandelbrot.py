@@ -1,7 +1,8 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from multiprocessing.dummy import Pool as ThreadPool
 import os.path
+from multiprocessing.dummy import Pool as ThreadPool
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def f(x):
@@ -55,6 +56,7 @@ for zl, dt, coordinates in results:
     plt.ticklabel_format(style='sci', scilimits=(0, 0))
 
     # plt.axis("off")
+    plt.tight_layout()
     plt.savefig("{img}.png".format(img=zl), dpi=350)
 
 # for zoomlevel in range(20):
